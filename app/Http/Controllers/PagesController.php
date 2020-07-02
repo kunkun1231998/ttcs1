@@ -23,7 +23,7 @@ class PagesController extends Controller
         if(count($cate->toArray())==0 || count($cate->posts)==0){
             return view('news.pages.category',['key'=>$slug]);
         } else {
-            $list = Post::where('category_id',$cate->id)->where('status',1)->orderBy('created_at','des')->paginate(2);
+            $list = Post::where('category_id',$cate->id)->where('status',1)->orderBy('created_at','des')->paginate(config('global.cate_post_length') ?? 4);
             return view('news.pages.category',['posts'=>$list,'cate'=>$cate->name]);
         }
     	

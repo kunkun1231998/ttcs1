@@ -4,12 +4,17 @@
 <section class="row">
 	<!-- Category posts -->
 	@foreach($cates as $cate)
+		<?php 
+			$posts = $cate->posts->where('status',1)->sortByDesc('created_at')->take(config('global.index_post_length') ?? 4);
+			if ($posts->count() <=0){
+				continue;
+			}
+			$post_1 = $posts->shift();
+		?>
 		<article class="six column">
+
 			<h4 class="cat-title"><a href="category/{{ $cate->slug }}">{{ $cate->name }} ( {{ $cate->posts->where('status',1)->count() }} )</a></h4>
-			<?php 
-				$posts = $cate->posts->where('status',1)->sortByDesc('created_at')->take(4);
-				$post_1 = $posts->shift();
-			?>
+			
 			{{-- Neu co 1 bai viet --}}
 			@if($post_1)
 				<div class="post-image zoom-out">

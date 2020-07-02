@@ -33,8 +33,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::post('profile/update', 'ProfileController@profileUpdate');
 
     /*Web structure*/
-    Route::prefix('structure')->name('.structure')->group(function(){
+    Route::prefix('structure')->name('structure')->group(function(){
         Route::get('/', 'WebStructureController@index')->name('.index');
+        Route::post('/update-post-length', 'WebStructureController@updatePostPagePostLength')->name('.update_post_length');
     });
     /* Group post*/
     Route::prefix('post')->group(function () {
