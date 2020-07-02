@@ -36,6 +36,14 @@
                                     value="{{ config('global.cate_post_length') ?? 3 }}"
                                     placeholder="Số lượng bài viết">
                             </div>
+                            <div class="form-group">
+                                <label for="cate_post_length">Right Sidebar</label>
+                                <input type="nnumber" min="1" class="form-control" name="right_side_post_length"
+                                    id="right_side_post_length"
+                                    value="{{ config('global.right_side_post_length') ?? 4 }}"
+                                    placeholder="Số lượng bài viết">
+                            </div>
+                            
                         </div>
                         <div class="col-lg-4">
                             <h3 class="page-header">Sidebar</h3>

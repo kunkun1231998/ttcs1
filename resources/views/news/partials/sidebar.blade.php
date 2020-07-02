@@ -23,7 +23,7 @@
 			
 						<div id="popular-tab" class="shine">
 							<ul>
-								<?php $post_hot = $posts->where('hot',1)->take(4); ?>
+								<?php $post_hot = $posts->where('hot',1)->take(config('global.right_side_post_length') ?? 4); ?>
 								@foreach($post_hot as $post)
 									<li class="shine-o">
 										@if($post->feture)
