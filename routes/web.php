@@ -32,6 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('profile', 'ProfileController@getProfile');
     Route::post('profile/update', 'ProfileController@profileUpdate');
 
+    /*Web structure*/
+    Route::prefix('structure')->name('.structure')->group(function(){
+        Route::get('/', 'WebStructureController@index')->name('.index');
+    });
     /* Group post*/
     Route::prefix('post')->group(function () {
         Route::get('/', 'PostController@getList')->name('list-post');

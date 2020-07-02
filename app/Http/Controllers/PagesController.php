@@ -20,7 +20,7 @@ class PagesController extends Controller
     public function getCategory($slug)
     {
         $cate = Category::where('slug', $slug)->first();
-        if(count($cate)==0 || count($cate->posts)==0){
+        if(count($cate->toArray())==0 || count($cate->posts)==0){
             return view('news.pages.category',['key'=>$slug]);
         } else {
             $list = Post::where('category_id',$cate->id)->where('status',1)->orderBy('created_at','des')->paginate(2);
@@ -31,8 +31,8 @@ class PagesController extends Controller
     public function getPost($slug)
     {
     
-    	$post = Post::where('status',1)->where('slug', $slug)->first();
-        if(count($post)==0){
+        $post = Post::where('status',1)->where('slug', $slug)->first();
+        if(count($post->toArray())==0){
             return view('news.pages.singlepost',['key'=>$slug]);
         } else
         {
@@ -45,7 +45,7 @@ class PagesController extends Controller
     public function getTag($key)
     {
     	$tag = Tag::where('name', $key)->first();
-        if(count($tag)==0 || count($tag->posts)==0){
+        if(count($tag->toArray())==0 || count($tag->posts)==0){
             return view('news.pages.tag',['key'=>$key]);
         } else 
         return view('news.pages.tag',['tag'=>$tag]);
@@ -59,7 +59,7 @@ class PagesController extends Controller
     public function getAuthor($user)
     {
         $author = Admin::where('name',$user )->first();
-        if(count($author)==0 || count($author->posts)==0){
+        if(count($author->toArray())==0 || count($author->posts)==0){
             return view('news.pages.author',['key'=>$user]);
         } else 
         return view('news.pages.author',['author'=>$author]);

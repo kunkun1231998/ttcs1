@@ -16,6 +16,9 @@
                 <a href="admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
+                <a href="admin/structure"><i class="fa fa-cubes fa-fw"></i> Bố cục trang</a>
+            </li>
+            <li>
                 <a href="admin/profile"><i class="fa fa-user fa-fw"></i> Cá Nhân</a>
             </li>
             <li>

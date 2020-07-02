@@ -177,14 +177,19 @@ h4.post-title {
     text-transform: uppercase;
 }
 
-#main-menu > ul > li > a {
+#main-menu > ul > li > a,#main-menu > ul > li > ul > li a {
     display: block;
     color: #fff;
     padding: 12px 25px;
     border-right: 1px solid #000;
     line-height: normal;
 }
-
+#main-menu > ul > li > ul > li a {
+    background: #fc7100;
+}
+#main-menu > ul > li > ul > li a:hover{
+    background: #000;
+}
 #main-menu a:hover, #main-menu a.active {
     background: #fc7100;
 }

@@ -1,9 +1,9 @@
 @extends('admin.layout.layout')
 @section('content')
-	<div id="page-wrapper">
+<div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-           <div class="col-lg-12">
+            <div class="col-lg-12">
                 <h1 class="page-header">Dashboard</h1>
             </div>
             <div class="row">
@@ -37,7 +37,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">{{ $num_cate}}</div>
+                                    <div class="huge">{{ $num_cate }}</div>
                                     <div>Chuyên Mục!</div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                     <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">{{ $num_admin}}</div>
+                                    <div class="huge">{{ $num_admin }}</div>
                                     <div>Người quản trị!</div>
                                 </div>
                             </div>
@@ -96,5 +96,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-@endsection
+    @endsection
