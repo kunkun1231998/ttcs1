@@ -43,7 +43,7 @@
 			
 						<div id="recent-tab" class="shine">
 							<ul>
-								<?php $post_recent = $posts->where('post_type','text')->take(4); ?>
+								<?php $post_recent = $posts->where('post_type','text')->take(config('global.right_side_post_length') ?? 4); ?>
 								@foreach($post_recent as $post)
 									<li class="shine-o">
 										@if($post->feture)
@@ -63,7 +63,7 @@
 			
 						<div id="view-tab" class="shine">
 							<ul>
-								<?php $post_recent = $posts->sortByDesc('view')->take(4); ?>
+								<?php $post_recent = $posts->sortByDesc('view')->take(config('global.right_side_post_length') ?? 4); ?>
 								@foreach($post_recent as $post)
 									<li class="shine-o">
 										@if($post->feture)
